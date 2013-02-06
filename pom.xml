@@ -22,13 +22,15 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
-    <artifactId>hal</artifactId>
+    <artifactId>hal-parent</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
-
-
     <name>HAL :: Parent</name>
-    <description>Release coordination of a EAP 6.x web management console that can be used across products</description>
+    <description>
+        Parent POM for the HAL build process. Does not reference dependencies, but acts as an umbrella POM.
+    </description>
+
+
     <scm>
         <connection>scm:git:git://https://github.com/hpehl/hal.git</connection>
         <developerConnection>scm:git:git@github.com:hpehl/hal.git</developerConnection>
@@ -39,6 +41,23 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+
+    <modules>
+        <module>extensions</module>
+        <module>master</module>
+    </modules>
+
+
+    <profiles>
+        <!-- Activate this profile to include the sample extensions -->
+        <profile>
+            <id>samples</id>
+            <modules>
+                <module>samples</module>
+            </modules>
+        </profile>
+    </profiles>
 
 
     <repositories>

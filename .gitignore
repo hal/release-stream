@@ -1,4 +1,8 @@
-samples
+incoming
+gwt-unitCache
+overlays
+target
+war
 .DS_Store
 *.class
 *.iml
