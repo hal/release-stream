@@ -35,7 +35,7 @@
 
 
     <modules>
-        <module>app</module>
         <module>ext</module>
+        <!-- The app module is not part of the reactor. It's just there to launch the extension on its own -->
     </modules>
 </project>

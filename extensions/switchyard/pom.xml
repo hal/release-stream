@@ -28,7 +28,7 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>hal-switchyard-teiid-extension-bom</artifactId>
+    <artifactId>hal-switchyard-extension-bom</artifactId>
     <packaging>pom</packaging>
     <name>HAL :: Extensions :: Switchyard</name>
     <description>BOM for the Switchyard HAL extension.</description>
