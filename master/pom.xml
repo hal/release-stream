@@ -41,7 +41,14 @@
         <dependencies>
             <dependency>
                 <groupId>org.jboss.hal</groupId>
-                <artifactId>hal-teiid-extension</artifactId>
+                <artifactId>hal-teiid-extension-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.hal</groupId>
+                <artifactId>hal-switchyard-extension-bom</artifactId>
                 <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -69,23 +76,23 @@
             <dependencies>
                 <dependency>
                     <groupId>org.jboss.hal</groupId>
-                    <artifactId>hal-simple-sample</artifactId>
+                    <artifactId>hal-simple-sample-ext</artifactId>
                     <version>${project.version}</version>
                 </dependency>
                 <dependency>
                     <groupId>org.jboss.hal</groupId>
-                    <artifactId>hal-simple-sample</artifactId>
+                    <artifactId>hal-simple-sample-ext</artifactId>
                     <version>${project.version}</version>
                     <classifier>sources</classifier>
                 </dependency>
                 <dependency>
                     <groupId>org.jboss.hal</groupId>
-                    <artifactId>hal-rich-sample</artifactId>
+                    <artifactId>hal-rich-sample-ext</artifactId>
                     <version>${project.version}</version>
                 </dependency>
                 <dependency>
                     <groupId>org.jboss.hal</groupId>
-                    <artifactId>hal-rich-sample</artifactId>
+                    <artifactId>hal-rich-sample-ext</artifactId>
                     <version>${project.version}</version>
                     <classifier>sources</classifier>
                 </dependency>

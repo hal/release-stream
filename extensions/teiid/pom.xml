@@ -28,10 +28,10 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>hal-teiid-extension</artifactId>
+    <artifactId>hal-teiid-extension-bom</artifactId>
     <packaging>pom</packaging>
     <name>HAL :: Extensions :: Teiid</name>
-    <description>Teiid HAL extension.</description>
+    <description>BOM for the Teiid HAL extension.</description>
 
 
     <dependencyManagement>

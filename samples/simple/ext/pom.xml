@@ -21,21 +21,18 @@
 
 
     <parent>
-        <groupId>org.jboss.hal</groupId>
-        <artifactId>hal-samples</artifactId>
-        <version>1.0</version>
+        <groupId>org.jboss.as</groupId>
+        <artifactId>jboss-as-console-extension</artifactId>
+        <version>1.6.0-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>hal-rich-sample</artifactId>
-    <packaging>pom</packaging>
-    <name>HAL :: Samples :: Rich</name>
-    <description>Parent POM for the rich HAL sample.</description>
-
-
-    <modules>
-        <module>app</module>
-        <module>ext</module>
-    </modules>
+    <groupId>org.jboss.hal</groupId>
+    <artifactId>hal-simple-sample-ext</artifactId>
+    <version>1.0</version>
+    <packaging>war</packaging>
+    <name>HAL :: Samples :: Simple :: Extension</name>
+    <description>Extension for the simple HAL sample.</description>
 </project>

@@ -36,5 +36,6 @@
 
     <modules>
         <module>teiid</module>
+        <module>switchyard</module>
     </modules>
 </project>
