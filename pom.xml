@@ -50,7 +50,6 @@
 
 
     <profiles>
-        <!-- Activate this profile to include the sample extensions -->
         <profile>
             <id>samples</id>
             <modules>
