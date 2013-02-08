@@ -31,10 +31,19 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>hal-master</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>war</packaging>
     <name>HAL :: Master</name>
     <description>HAL master. Implements the assembly of the master console build.</description>
+
+
+    <properties>
+        <product.name>jboss</product.name>
+        <layer.name>web-interface</layer.name>
+        <module.path>org/boss/as/console/main</module.path>
+        <module.name>org.boss.as.console.main</module.name>
+        <module.slot>${project.version}</module.slot>
+    </properties>
 
 
     <dependencyManagement>
@@ -57,20 +66,58 @@
     </dependencyManagement>
 
 
-    <dependencies>
-        <dependency>
-            <groupId>org.jboss.teiid.web-console</groupId>
-            <artifactId>console-extensions</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.teiid.web-console</groupId>
-            <artifactId>console-extensions</artifactId>
-            <classifier>sources</classifier>
-        </dependency>
-    </dependencies>
+    <build>
+        <finalName>${artifactId}-${product.name}-${version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/console.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>(************ HAL assembly for ${product.name} ************)</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 
     <profiles>
+        <profile>
+            <id>eap</id>
+            <properties>
+                <product.name>eap</product.name>
+                <module.path>org/jboss/as/console/eap</module.path>
+                <module.name>org.jboss.as.console.eap</module.name>
+            </properties>
+        </profile>
+
+
+        <profile>
+            <id>extensions</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.teiid.web-console</groupId>
+                    <artifactId>console-extensions</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.jboss.teiid.web-console</groupId>
+                    <artifactId>console-extensions</artifactId>
+                    <classifier>sources</classifier>
+                </dependency>
+            </dependencies>
+        </profile>
+
+
         <profile>
             <id>samples</id>
             <dependencies>
