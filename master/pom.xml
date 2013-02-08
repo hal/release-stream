@@ -46,26 +46,6 @@
     </properties>
 
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.jboss.hal</groupId>
-                <artifactId>hal-teiid-extension-bom</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.hal</groupId>
-                <artifactId>hal-switchyard-extension-bom</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-
     <build>
         <finalName>${artifactId}-${product.name}-${version}</finalName>
         <plugins>
@@ -79,7 +59,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>(************ HAL assembly for ${product.name} ************)</id>
+                        <id>=~=~=~=~= HAL assembly for ::${product.name}:: =~=~=~=~=</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
@@ -104,6 +84,24 @@
 
         <profile>
             <id>extensions</id>
+            <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jboss.hal</groupId>
+                        <artifactId>hal-teiid-extension-bom</artifactId>
+                        <version>${project.version}</version>
+                        <type>pom</type>
+                        <scope>import</scope>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jboss.hal</groupId>
+                        <artifactId>hal-switchyard-extension-bom</artifactId>
+                        <version>${project.version}</version>
+                        <type>pom</type>
+                        <scope>import</scope>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
             <dependencies>
                 <dependency>
                     <groupId>org.jboss.teiid.web-console</groupId>
