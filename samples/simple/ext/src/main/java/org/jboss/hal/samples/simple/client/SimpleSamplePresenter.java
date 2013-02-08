@@ -43,7 +43,7 @@ public class SimpleSamplePresenter extends Presenter<SimpleSamplePresenter.MyVie
         super.onReset();
 
         // populate data model, i.e. from remote call
-        SimpleSampleModel model = factory.getModel().as();
+        SimpleSampleModel model = factory.getSimpleSampleModel().as();
         model.setGreeting("Hello World");
 
         // update view
@@ -60,7 +60,7 @@ public class SimpleSamplePresenter extends Presenter<SimpleSamplePresenter.MyVie
     // ------------------------------------------------------ inner classes
 
     @ProxyCodeSplit
-    @NameToken("module1")
+    @NameToken("simpleSample")
     @SubsystemExtension(name = "Simple Sample", group = "Extensions", key = "logging") // fake key, otheriwse it would not be loaded
     public interface MyProxy extends Proxy<SimpleSamplePresenter>, Place
     {

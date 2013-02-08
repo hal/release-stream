@@ -9,5 +9,5 @@ import org.jboss.as.console.spi.BeanFactoryExtension;
 @BeanFactoryExtension
 public interface RichSampleBeanFactory
 {
-    AutoBean<RichSampleModel> getModel();
+    AutoBean<RichSampleModel> getRichSampleModel();
 }

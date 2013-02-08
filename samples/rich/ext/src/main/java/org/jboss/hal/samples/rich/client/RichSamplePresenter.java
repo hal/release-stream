@@ -43,7 +43,7 @@ public class RichSamplePresenter extends Presenter<RichSamplePresenter.MyView, R
         super.onReset();
 
         // populate data model, i.e. from remote call
-        RichSampleModel model = factory.getModel().as();
+        RichSampleModel model = factory.getRichSampleModel().as();
         model.setGreeting("Hello World");
 
         // update view
@@ -61,7 +61,7 @@ public class RichSamplePresenter extends Presenter<RichSamplePresenter.MyView, R
 
 
     @ProxyCodeSplit
-    @NameToken("module1")
+    @NameToken("richSample")
     @SubsystemExtension(name = "Rich Sample", group = "Extensions", key = "logging")
     // fake key, otheriwse it would not be loaded
     public interface MyProxy extends Proxy<RichSamplePresenter>, Place
