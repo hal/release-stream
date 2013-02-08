@@ -59,11 +59,9 @@ public class SimpleSamplePresenter extends Presenter<SimpleSamplePresenter.MyVie
 
     // ------------------------------------------------------ inner classes
 
-
     @ProxyCodeSplit
     @NameToken("module1")
-    @SubsystemExtension(name = "Simple Sample", group = "Extensions", key = "logging")
-    // fake key, otheriwse it would not be loaded
+    @SubsystemExtension(name = "Simple Sample", group = "Extensions", key = "logging") // fake key, otheriwse it would not be loaded
     public interface MyProxy extends Proxy<SimpleSamplePresenter>, Place
     {
     }

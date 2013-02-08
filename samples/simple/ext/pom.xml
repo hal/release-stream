@@ -31,7 +31,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>hal-simple-sample-ext</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>HAL :: Samples :: Simple :: Extension</name>
     <description>Extension for the simple HAL sample.</description>

@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>hal-parent</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>HAL :: Parent</name>
     <description>
@@ -44,12 +44,30 @@
 
 
     <modules>
-        <module>extensions</module>
         <module>master</module>
     </modules>
 
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
     <profiles>
+        <profile>
+            <id>extensions</id>
+            <modules>
+                <module>extensions</module>
+            </modules>
+        </profile>
         <profile>
             <id>samples</id>
             <modules>
