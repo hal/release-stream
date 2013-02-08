@@ -8,7 +8,7 @@ import org.jboss.hal.samples.rich.client.RichSamplePresenter;
  * @author Harald Pehl
  */
 
-@GinExtension("org.jboss.hal.samples.simple.RichSample")
+@GinExtension("org.jboss.hal.samples.rich.RichSample")
 public interface Extension
 {
     AsyncProvider<RichSamplePresenter> getRichSamplePresenter();
