@@ -13,12 +13,12 @@
     <files>
         <file>
             <source>${project.basedir}/src/main/assembly/module.xml</source>
-            <outputDirectory>modules/system/layers/${layer.name}/${module.path}</outputDirectory>
+            <outputDirectory>modules/system/layers/${layer.name}/${module.path}/${module.slot}</outputDirectory>
             <filtered>true</filtered>
         </file>
         <file>
             <source>${project.build.directory}/${project.build.finalName}-resources.jar</source>
-            <outputDirectory>modules/system/layers/${layer.name}/${module.path}</outputDirectory>
+            <outputDirectory>modules/system/layers/${layer.name}/${module.path}/${module.slot}</outputDirectory>
             <filtered>false</filtered>
         </file>
     </files>
