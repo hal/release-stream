@@ -40,8 +40,8 @@
     <properties>
         <product.name>jboss</product.name>
         <layer.name>web-interface</layer.name>
-        <module.path>org/boss/as/console/main</module.path>
-        <module.name>org.boss.as.console.main</module.name>
+        <module.path>org/jboss/as/console/main</module.path>
+        <module.name>org.jboss.as.console.main</module.name>
         <module.slot>${project.version}</module.slot>
     </properties>
 
