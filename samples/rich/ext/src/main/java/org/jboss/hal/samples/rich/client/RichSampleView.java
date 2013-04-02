@@ -3,7 +3,7 @@ package org.jboss.hal.samples.rich.client;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import org.jboss.as.console.client.core.SuspendableViewImpl;
-import org.jboss.as.console.client.shared.viewframework.builder.SimpleLayout;
+import org.jboss.as.console.client.layout.SimpleLayout;
 import org.jboss.hal.samples.rich.client.model.RichSampleModel;
 
 /**
