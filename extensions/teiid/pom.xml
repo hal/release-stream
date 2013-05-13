@@ -35,7 +35,7 @@
 
 
     <properties>
-        <teiid.version>1.1.0.Final</teiid.version>
+        <teiid.version>1.1.0-SNAPSHOT</teiid.version>
     </properties>
 
 
