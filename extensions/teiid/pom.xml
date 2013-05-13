@@ -30,8 +30,13 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>hal-teiid-extension-bom</artifactId>
     <packaging>pom</packaging>
-    <name>HAL :: Extensions :: Teiid</name>
+    <name>HAL Release Stream :: Extensions :: Teiid</name>
     <description>BOM for the Teiid HAL extension.</description>
+
+
+    <properties>
+        <teiid.version>1.1.0.Final</teiid.version>
+    </properties>
 
 
     <dependencyManagement>
@@ -39,12 +44,12 @@
             <dependency>
                 <groupId>org.jboss.teiid.web-console</groupId>
                 <artifactId>console-extensions</artifactId>
-                <version>1.1.0.Final</version>
+                <version>${teiid.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.teiid.web-console</groupId>
                 <artifactId>console-extensions</artifactId>
-                <version>1.1.0.Final</version>
+                <version>${teiid.version}</version>
                 <classifier>sources</classifier>
             </dependency>
         </dependencies>

@@ -22,7 +22,7 @@
 
     <parent>
         <groupId>org.jboss.hal</groupId>
-        <artifactId>hal-parent</artifactId>
+        <artifactId>release-stream-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
@@ -30,7 +30,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>hal-extensions</artifactId>
     <packaging>pom</packaging>
-    <name>HAL :: Extensions</name>
+    <name>HAL Release Stream :: Extensions</name>
     <description>Parent POM for all HAL extensions.</description>
 
 

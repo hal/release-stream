@@ -22,19 +22,19 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
-    <artifactId>hal-parent</artifactId>
+    <artifactId>release-stream-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-    <name>HAL :: Parent</name>
+    <name>HAL Release Stream :: Parent Aggregator</name>
     <description>
-        Parent POM for the HAL build process. Does not reference dependencies, but acts as an umbrella POM.
+        Parent POM for the HAL release stream. Does not reference dependencies, but acts as an umbrella POM.
     </description>
 
 
     <scm>
-        <connection>scm:git:git://https://github.com/hpehl/hal.git</connection>
-        <developerConnection>scm:git:git@github.com:hpehl/hal.git</developerConnection>
-        <url>https://github.com/hpehl/hal</url>
+        <connection>scm:git:git://https://github.com/hal/release-stream.git</connection>
+        <developerConnection>scm:git:git@github.com:hat/release-stream.git</developerConnection>
+        <url>https://github.com/hal/release-stream</url>
     </scm>
 
 
@@ -45,6 +45,7 @@
 
     <modules>
         <module>master</module>
+        <module>extensions</module>
     </modules>
 
 
@@ -59,22 +60,6 @@
             </plugins>
         </pluginManagement>
     </build>
-
-
-    <profiles>
-        <profile>
-            <id>extensions</id>
-            <modules>
-                <module>extensions</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>samples</id>
-            <modules>
-                <module>samples</module>
-            </modules>
-        </profile>
-    </profiles>
 
 
     <repositories>

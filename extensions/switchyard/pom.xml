@@ -30,13 +30,28 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>hal-switchyard-extension-bom</artifactId>
     <packaging>pom</packaging>
-    <name>HAL :: Extensions :: Switchyard</name>
+    <name>HAL Release Stream :: Extensions :: Switchyard</name>
     <description>BOM for the Switchyard HAL extension.</description>
+
+
+    <properties>
+        <switchyard.version>1.0.0-SNAPSHOT</switchyard.version>
+    </properties>
 
 
     <dependencyManagement>
         <dependencies>
-            <!-- TBD -->
+            <dependency>
+                <groupId>org.switchyard.console</groupId>
+                <artifactId>switchyard-console-extension</artifactId>
+                <version>${switchyard.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.switchyard.console</groupId>
+                <artifactId>switchyard-console-extension</artifactId>
+                <version>${switchyard.version}</version>
+                <classifier>sources</classifier>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

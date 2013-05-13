@@ -30,20 +30,60 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
-    <artifactId>hal-master</artifactId>
+    <artifactId>release-stram</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
-    <name>HAL :: Master</name>
-    <description>HAL master. Implements the assembly of the master console build.</description>
+    <name>HAL Release Stream :: Master</name>
+    <description>HAL release stream master. Implements the assembly.</description>
 
 
     <properties>
-        <product.name>jboss</product.name>
+        <product.name>wildfly</product.name>
         <layer.name>web-interface</layer.name>
         <module.path>org/jboss/as/console/main</module.path>
         <module.name>org.jboss.as.console.main</module.name>
         <module.slot>${project.version}</module.slot>
     </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.hal</groupId>
+                <artifactId>hal-teiid-extension-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.hal</groupId>
+                <artifactId>hal-switchyard-extension-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.teiid.web-console</groupId>
+            <artifactId>console-extensions</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.teiid.web-console</groupId>
+            <artifactId>console-extensions</artifactId>
+            <classifier>sources</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.switchyard.console</groupId>
+            <artifactId>switchyard-console-extension</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.switchyard.console</groupId>
+            <artifactId>switchyard-console-extension</artifactId>
+            <classifier>sources</classifier>
+        </dependency>
+    </dependencies>
 
 
     <build>
@@ -59,7 +99,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>=~=~=~=~= HAL assembly for ::${product.name}:: =~=~=~=~=</id>
+                        <id>=~=~=~=~= Assembly for ::${product.name}:: =~=~=~=~=</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
@@ -79,69 +119,6 @@
                 <module.path>org/jboss/as/console/eap</module.path>
                 <module.name>org.jboss.as.console.eap</module.name>
             </properties>
-        </profile>
-
-
-        <profile>
-            <id>extensions</id>
-            <dependencyManagement>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jboss.hal</groupId>
-                        <artifactId>hal-teiid-extension-bom</artifactId>
-                        <version>${project.version}</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.jboss.hal</groupId>
-                        <artifactId>hal-switchyard-extension-bom</artifactId>
-                        <version>${project.version}</version>
-                        <type>pom</type>
-                        <scope>import</scope>
-                    </dependency>
-                </dependencies>
-            </dependencyManagement>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.teiid.web-console</groupId>
-                    <artifactId>console-extensions</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.teiid.web-console</groupId>
-                    <artifactId>console-extensions</artifactId>
-                    <classifier>sources</classifier>
-                </dependency>
-            </dependencies>
-        </profile>
-
-
-        <profile>
-            <id>samples</id>
-            <dependencies>
-                <dependency>
-                    <groupId>org.jboss.hal</groupId>
-                    <artifactId>hal-simple-sample-ext</artifactId>
-                    <version>${project.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.hal</groupId>
-                    <artifactId>hal-simple-sample-ext</artifactId>
-                    <version>${project.version}</version>
-                    <classifier>sources</classifier>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.hal</groupId>
-                    <artifactId>hal-rich-sample-ext</artifactId>
-                    <version>${project.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.jboss.hal</groupId>
-                    <artifactId>hal-rich-sample-ext</artifactId>
-                    <version>${project.version}</version>
-                    <classifier>sources</classifier>
-                </dependency>
-            </dependencies>
         </profile>
     </profiles>
 </project>
