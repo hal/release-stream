@@ -20,15 +20,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 
+    <parent>
+        <groupId>org.jboss.as</groupId>
+        <artifactId>jboss-as-console-build</artifactId>
+        <version>1.7.0-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
+
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
-    <artifactId>release-stream-parent</artifactId>
+    <artifactId>release-stream</artifactId>
     <version>1.0.0</version>
-    <packaging>pom</packaging>
-    <name>HAL Release Stream :: Parent Aggregator</name>
-    <description>
-        Parent POM for the HAL release stream. Does not reference dependencies, but acts as an umbrella POM.
-    </description>
+    <packaging>war</packaging>
+    <name>HAL Release Stream</name>
+    <description>HAL release stream master. Implements the assembly.</description>
 
 
     <scm>
@@ -39,17 +45,50 @@
 
 
     <properties>
+        <!-- Maven -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Assembly Build -->
+        <product.name>wildfly</product.name>
+        <layer.name>web-interface</layer.name>
+        <module.path>org/jboss/as/console/main</module.path>
+        <module.name>org.jboss.as.console.main</module.name>
+        <module.slot>${project.version}</module.slot>
+
+        <!-- Extensions -->
+        <extension.switchyard.version>1.0.0-SNAPSHOT</extension.switchyard.version>
+        <extension.teiid.version>1.1.0-SNAPSHOT</extension.teiid.version>
     </properties>
 
 
-    <modules>
-        <module>master</module>
-        <module>extensions</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.switchyard.console</groupId>
+            <artifactId>switchyard-console-extension</artifactId>
+            <version>${extension.switchyard.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.switchyard.console</groupId>
+            <artifactId>switchyard-console-extension</artifactId>
+            <version>${extension.switchyard.version}</version>
+            <classifier>sources</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.teiid.web-console</groupId>
+            <artifactId>console-extensions</artifactId>
+            <version>${extension.teiid.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.teiid.web-console</groupId>
+            <artifactId>console-extensions</artifactId>
+            <version>${extension.teiid.version}</version>
+            <classifier>sources</classifier>
+        </dependency>
+    </dependencies>
 
 
     <build>
+        <finalName>${project.artifactId}-${product.name}-${project.version}</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -59,7 +98,39 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/console.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>=~=~=~=~= Assembly for ::${product.name}:: =~=~=~=~=</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
+
+
+    <profiles>
+        <profile>
+            <id>eap</id>
+            <properties>
+                <product.name>eap</product.name>
+                <module.path>org/jboss/as/console/eap</module.path>
+                <module.name>org.jboss.as.console.eap</module.name>
+            </properties>
+        </profile>
+    </profiles>
 
 
     <repositories>
