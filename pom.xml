@@ -31,7 +31,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>release-stream</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>HAL Release Stream</name>
     <description>HAL release stream master. Implements the assembly.</description>
@@ -48,7 +48,7 @@
         <!-- Maven -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- Assembly Build -->
+        <!-- Assembly -->
         <product.name>wildfly</product.name>
         <layer.name>web-interface</layer.name>
         <module.path>org/jboss/as/console/main</module.path>
@@ -88,7 +88,7 @@
 
 
     <build>
-        <finalName>${project.artifactId}-${product.name}-${project.version}</finalName>
+        <finalName>hal-master-${product.name}-${project.version}</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
