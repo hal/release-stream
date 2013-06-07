@@ -62,17 +62,17 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>org.switchyard.console</groupId>
-            <artifactId>switchyard-console-extension</artifactId>
-            <version>${extension.switchyard.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.switchyard.console</groupId>
-            <artifactId>switchyard-console-extension</artifactId>
-            <version>${extension.switchyard.version}</version>
-            <classifier>sources</classifier>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.switchyard.console</groupId>-->
+            <!--<artifactId>switchyard-console-extension</artifactId>-->
+            <!--<version>${extension.switchyard.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.switchyard.console</groupId>-->
+            <!--<artifactId>switchyard-console-extension</artifactId>-->
+            <!--<version>${extension.switchyard.version}</version>-->
+            <!--<classifier>sources</classifier>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.jboss.teiid.web-console</groupId>
             <artifactId>console-extensions</artifactId>
@@ -147,20 +147,6 @@
             </snapshots>
         </repository>
     </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>jboss-public-repository-group</id>
-            <name>JBoss Public Maven Repository Group</name>
-            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
-            <layout>default</layout>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <snapshots>
-                <updatePolicy>never</updatePolicy>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 
 
     <distributionManagement>
