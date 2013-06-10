@@ -73,7 +73,7 @@
             <!--<version>${extension.switchyard.version}</version>-->
             <!--<classifier>sources</classifier>-->
         <!--</dependency>-->
-        <dependency>
+        <!--dependency>
             <groupId>org.jboss.teiid.web-console</groupId>
             <artifactId>console-extensions</artifactId>
             <version>${extension.teiid.version}</version>
@@ -83,7 +83,7 @@
             <artifactId>console-extensions</artifactId>
             <version>${extension.teiid.version}</version>
             <classifier>sources</classifier>
-        </dependency>
+        </dependency-->
     </dependencies>
 
 
