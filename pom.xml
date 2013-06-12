@@ -63,15 +63,15 @@
 
     <dependencies>
         <!--<dependency>-->
-            <!--<groupId>org.switchyard.console</groupId>-->
-            <!--<artifactId>switchyard-console-extension</artifactId>-->
-            <!--<version>${extension.switchyard.version}</version>-->
+        <!--<groupId>org.switchyard.console</groupId>-->
+        <!--<artifactId>switchyard-console-extension</artifactId>-->
+        <!--<version>${extension.switchyard.version}</version>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>org.switchyard.console</groupId>-->
-            <!--<artifactId>switchyard-console-extension</artifactId>-->
-            <!--<version>${extension.switchyard.version}</version>-->
-            <!--<classifier>sources</classifier>-->
+        <!--<groupId>org.switchyard.console</groupId>-->
+        <!--<artifactId>switchyard-console-extension</artifactId>-->
+        <!--<version>${extension.switchyard.version}</version>-->
+        <!--<classifier>sources</classifier>-->
         <!--</dependency>-->
         <!--dependency>
             <groupId>org.jboss.teiid.web-console</groupId>
@@ -116,6 +116,24 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>war</directory>
+                            <includes>
+                                <include>**/*.*</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>gwt-unitCache</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
             </plugin>
         </plugins>
     </build>
