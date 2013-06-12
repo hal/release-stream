@@ -135,6 +135,26 @@
                     </filesets>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <classesDirectory>war</classesDirectory>
+                    <excludes>
+                        <exclude>WEB-INF/**</exclude>
+                    </excludes>
+                    <classifier>resources</classifier>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
