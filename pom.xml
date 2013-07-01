@@ -133,7 +133,7 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <descriptors>
-                        <descriptor>src/main/assembly/console.xml</descriptor>
+                        <descriptor>src/main/assembly/installer.xml</descriptor>
                     </descriptors>
                 </configuration>
                 <executions>
