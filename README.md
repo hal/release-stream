@@ -18,8 +18,7 @@ The HAL build can be controlled by using one or several profiles:
 
 - __&lt;no profile&gt;__: Whithout specifying a profile the console for the community (WildFly) version is built.
 - __product__ *and* __eap__: Builds the console with EAP specific settings (module.xml, L&F).
-- __dev__: Reduces the GWT compile time drastically. Restricts the languages to english and the browser permutations to
-firefox (cannot be combined with eap).
+- __dev__: Reduces the GWT compile time drastically. Restricts the languages to english and the browser permutations to firefox (cannot be combined with eap).
 
 # Build
 To build HAL use `mvn clean install` from the root directory and choose a combination of profiles from above.
