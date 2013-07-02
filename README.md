@@ -10,7 +10,7 @@ At the moment HAL includes the following extensions:
 - Switchyard
 
 The core console and the extensions are compiled together into one final master console. This master console is
-assembled as a zip file named `hal-console-<version>-installer.zip`. The zip contains a layer which can be safley
+assembled as a zip file named `hal-console-<version>-overlay.zip`. The zip contains a layer which can be safley
 unzipped into an existing WildFly / EAP installation.
 
 # Profiles
@@ -25,4 +25,4 @@ firefox (cannot be combined with eap).
 To build HAL use `mvn clean install` from the root directory and choose a combination of profiles from above.
 
 # Install
-Unzip `target/hal-console-<version>-installer.zip` into an existing WildFly / EAP installation and restart the server.
+Unzip `target/hal-console-<version>-overlay.zip` into an existing WildFly / EAP installation and restart the server.
