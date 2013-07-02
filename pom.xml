@@ -51,7 +51,7 @@
         <module.slot>main</module.slot>
 
         <!-- Extensions -->
-        <extension.picketlink.version>1.0.3-SNAPSHOT</extension.picketlink.version>
+        <extension.picketlink.version>1.0.3.CR1</extension.picketlink.version>
         <extension.switchyard.version>1.0.0-SNAPSHOT</extension.switchyard.version>
         <extension.teiid.version>1.1.0-SNAPSHOT</extension.teiid.version>
     </properties>
