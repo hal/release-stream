@@ -23,7 +23,7 @@
     <parent>
         <groupId>org.jboss.as</groupId>
         <artifactId>jboss-as-console-build</artifactId>
-        <version>1.5.4.Final</version>
+        <version>1.6.2.Final</version>
         <relativePath/>
     </parent>
 
@@ -51,14 +51,17 @@
         <module.slot>main</module.slot>
 
         <!-- Extensions -->
-        <extension.picketlink.version>1.0.3.CR1</extension.picketlink.version>
-        <extension.switchyard.version>1.0.0.Final</extension.switchyard.version>
-        <extension.teiid.version>1.1.0.Final</extension.teiid.version>
+        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!--<extension.picketlink.version>1.0.3.CR1</extension.picketlink.version>-->
+        <!--<extension.switchyard.version>1.0.0.Final</extension.switchyard.version>-->
+        <!--<extension.teiid.version>1.1.0.Final</extension.teiid.version>-->
     </properties>
 
 
     <dependencies>
         <!-- PicketLink -->
+        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!--
         <dependency>
             <groupId>org.picketlink</groupId>
             <artifactId>picketlink-console-extensions</artifactId>
@@ -70,8 +73,11 @@
             <version>${extension.picketlink.version}</version>
             <classifier>sources</classifier>
         </dependency>
+        -->
 
         <!-- SwitchYard -->
+        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!--
         <dependency>
             <groupId>org.switchyard.console</groupId>
             <artifactId>switchyard-console-extension</artifactId>
@@ -83,8 +89,11 @@
             <version>${extension.switchyard.version}</version>
             <classifier>sources</classifier>
         </dependency>
+        -->
 
         <!-- Teiid -->
+        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!--
         <dependency>
             <groupId>org.jboss.teiid.web-console</groupId>
             <artifactId>console-extensions</artifactId>
@@ -96,6 +105,7 @@
             <version>${extension.teiid.version}</version>
             <classifier>sources</classifier>
         </dependency>
+        -->
     </dependencies>
 
 
@@ -195,8 +205,8 @@
                         <configuration>
                             <rules>
                                 <requireJavaVersion>
-                                    <version>[1.6,1.7]</version>
-                                    <message>*** The build works with JDK 6 only! ***</message>
+                                    <version>[1.7,)</version>
+                                    <message>*** The build works with JDK 7 only! ***</message>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
