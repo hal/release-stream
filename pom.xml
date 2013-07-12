@@ -16,14 +16,14 @@
   ~ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
   ~ MA  02110-1301, USA.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 
     <parent>
         <groupId>org.jboss.as</groupId>
         <artifactId>jboss-as-console-build</artifactId>
-        <version>1.7.0-SNAPSHOT</version>
+        <version>1.7.0.Final</version>
         <relativePath/>
     </parent>
 
@@ -31,7 +31,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>release-stream</artifactId>
-    <version>1.0.0</version>
+    <version>1.7.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>HAL Release Stream</name>
     <description>HAL release stream master. Implements the assembly.</description>
@@ -49,46 +49,75 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Assembly -->
-        <product.name>wildfly</product.name>
-        <layer.name>web-interface</layer.name>
-        <module.path>org/jboss/as/console/main</module.path>
-        <module.name>org.jboss.as.console.main</module.name>
-        <module.slot>${project.version}</module.slot>
+        <module.slot>main</module.slot>
 
         <!-- Extensions -->
-        <extension.switchyard.version>1.0.0-SNAPSHOT</extension.switchyard.version>
-        <extension.teiid.version>1.1.0-SNAPSHOT</extension.teiid.version>
+        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!--<extension.picketlink.version>1.0.3.CR1</extension.picketlink.version>-->
+        <!--<extension.switchyard.version>1.0.0.Final</extension.switchyard.version>-->
+        <!--<extension.teiid.version>1.1.0.Final</extension.teiid.version>-->
     </properties>
 
 
     <dependencies>
-        <!--<dependency>-->
-        <!--<groupId>org.switchyard.console</groupId>-->
-        <!--<artifactId>switchyard-console-extension</artifactId>-->
-        <!--<version>${extension.switchyard.version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>org.switchyard.console</groupId>-->
-        <!--<artifactId>switchyard-console-extension</artifactId>-->
-        <!--<version>${extension.switchyard.version}</version>-->
-        <!--<classifier>sources</classifier>-->
-        <!--</dependency>-->
-        <!--dependency>
+        <!-- PicketLink -->
+        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!--
+        <dependency>
+            <groupId>org.picketlink</groupId>
+            <artifactId>picketlink-console-extensions</artifactId>
+            <version>${extension.picketlink.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.picketlink</groupId>
+            <artifactId>picketlink-console-extensions</artifactId>
+            <version>${extension.picketlink.version}</version>
+            <classifier>sources</classifier>
+            <scope>provided</scope>
+        </dependency>
+        -->
+
+        <!-- SwitchYard -->
+        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!--
+        <dependency>
+            <groupId>org.switchyard.console</groupId>
+            <artifactId>switchyard-console-extension</artifactId>
+            <version>${extension.switchyard.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.switchyard.console</groupId>
+            <artifactId>switchyard-console-extension</artifactId>
+            <version>${extension.switchyard.version}</version>
+            <classifier>sources</classifier>
+            <scope>provided</scope>
+        </dependency>
+        -->
+
+        <!-- Teiid -->
+        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!--
+        <dependency>
             <groupId>org.jboss.teiid.web-console</groupId>
             <artifactId>console-extensions</artifactId>
             <version>${extension.teiid.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.teiid.web-console</groupId>
             <artifactId>console-extensions</artifactId>
             <version>${extension.teiid.version}</version>
             <classifier>sources</classifier>
-        </dependency-->
+            <scope>provided</scope>
+        </dependency>
+        -->
     </dependencies>
 
 
     <build>
-        <finalName>hal-master-${product.name}-${project.version}</finalName>
+        <finalName>hal-console-${project.version}</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -96,20 +125,37 @@
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>2.4</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>1.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
             </plugins>
         </pluginManagement>
+
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <descriptors>
-                        <descriptor>src/main/assembly/console.xml</descriptor>
+                        <descriptor>src/main/assembly/overlay.xml</descriptor>
                     </descriptors>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>=~=~=~=~= Assembly for ::${product.name}:: =~=~=~=~=</id>
+                        <id>=~=~=~=~= Assembly for :: HAL Console ${project.version} (slot ${module.slot}):: =~=~=~=~=</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
@@ -117,7 +163,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
@@ -135,7 +180,6 @@
                     </filesets>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -155,17 +199,36 @@
                     <classifier>resources</classifier>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <id>enforce-versions</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>[1.7,)</version>
+                                    <message>*** The build works with JDK 7 only! ***</message>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
 
     <profiles>
         <profile>
-            <id>eap</id>
+            <id>product</id>
             <properties>
-                <product.name>eap</product.name>
-                <module.path>org/jboss/as/console/eap</module.path>
-                <module.name>org.jboss.as.console.eap</module.name>
+                <module.slot>eap</module.slot>
             </properties>
         </profile>
     </profiles>
