@@ -3,7 +3,7 @@
           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
 
 
-    <id>console</id>
+    <id>overlay</id>
     <formats>
         <format>zip</format>
     </formats>
@@ -18,12 +18,12 @@
         </file>
         <file>
             <source>${project.basedir}/src/main/assembly/module.xml</source>
-            <outputDirectory>modules/system/layers/${layer.name}/${module.path}/${module.slot}</outputDirectory>
+            <outputDirectory>modules/system/layers/web-interface/org/jboss/as/console/${module.slot}</outputDirectory>
             <filtered>true</filtered>
         </file>
         <file>
             <source>${project.build.directory}/${project.build.finalName}-resources.jar</source>
-            <outputDirectory>modules/system/layers/${layer.name}/${module.path}/${module.slot}</outputDirectory>
+            <outputDirectory>modules/system/layers/web-interface/org/jboss/as/console/${module.slot}</outputDirectory>
             <filtered>false</filtered>
         </file>
     </files>
