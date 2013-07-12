@@ -23,7 +23,7 @@
     <parent>
         <groupId>org.jboss.as</groupId>
         <artifactId>jboss-as-console-build</artifactId>
-        <version>1.6.2.Final</version>
+        <version>1.6.3.Final</version>
         <relativePath/>
     </parent>
 
@@ -31,6 +31,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>release-stream</artifactId>
+    <version>1.6.3.1.Final</version>
     <packaging>war</packaging>
     <name>HAL Release Stream</name>
     <description>HAL release stream master. Implements the assembly.</description>
@@ -66,12 +67,14 @@
             <groupId>org.picketlink</groupId>
             <artifactId>picketlink-console-extensions</artifactId>
             <version>${extension.picketlink.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.picketlink</groupId>
             <artifactId>picketlink-console-extensions</artifactId>
             <version>${extension.picketlink.version}</version>
             <classifier>sources</classifier>
+            <scope>provided</scope>
         </dependency>
         -->
 
@@ -82,12 +85,14 @@
             <groupId>org.switchyard.console</groupId>
             <artifactId>switchyard-console-extension</artifactId>
             <version>${extension.switchyard.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.switchyard.console</groupId>
             <artifactId>switchyard-console-extension</artifactId>
             <version>${extension.switchyard.version}</version>
             <classifier>sources</classifier>
+            <scope>provided</scope>
         </dependency>
         -->
 
@@ -98,12 +103,14 @@
             <groupId>org.jboss.teiid.web-console</groupId>
             <artifactId>console-extensions</artifactId>
             <version>${extension.teiid.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.teiid.web-console</groupId>
             <artifactId>console-extensions</artifactId>
             <version>${extension.teiid.version}</version>
             <classifier>sources</classifier>
+            <scope>provided</scope>
         </dependency>
         -->
     </dependencies>
