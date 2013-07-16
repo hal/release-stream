@@ -31,7 +31,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>release-stream</artifactId>
-    <version>1.6.3.2-SNAPSHOT</version>
+    <version>2.3.0.Final</version>
     <packaging>war</packaging>
     <name>HAL Release Stream</name>
     <description>HAL release stream master. Implements the assembly.</description>
@@ -52,7 +52,7 @@
         <module.slot>main</module.slot>
 
         <!-- Extensions -->
-        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!-- Enable as soon as a final release for Core Console 1.6.x is available -->
         <!--<extension.picketlink.version>1.0.3.CR1</extension.picketlink.version>-->
         <!--<extension.switchyard.version>1.0.0.Final</extension.switchyard.version>-->
         <!--<extension.teiid.version>1.1.0.Final</extension.teiid.version>-->
@@ -61,7 +61,7 @@
 
     <dependencies>
         <!-- PicketLink -->
-        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!-- Enable as soon as a final release for Core Console 1.6.x is available -->
         <!--
         <dependency>
             <groupId>org.picketlink</groupId>
@@ -79,7 +79,7 @@
         -->
 
         <!-- SwitchYard -->
-        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!-- Enable as soon as a final release for Core Console 1.6.x is available -->
         <!--
         <dependency>
             <groupId>org.switchyard.console</groupId>
@@ -97,7 +97,7 @@
         -->
 
         <!-- Teiid -->
-        <!-- Enable as soon as a final release for Core Console 1.6.2.Final is available -->
+        <!-- Enable as soon as a final release for Core Console 1.6.x is available -->
         <!--
         <dependency>
             <groupId>org.jboss.teiid.web-console</groupId>
