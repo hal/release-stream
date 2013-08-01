@@ -159,11 +159,11 @@
                             </processors>
                             <options>
                                 <!--
-                                    This overrides the core console version with the version of the HAL release stream
+                                    All properties prefixed with 'gwt' are written into the
+                                    generated GWT module (without the 'gwt.' prefix)
                                 -->
-                                <version>${project.version}</version>
-                                <!-- All other properties must be cloned -->
-                                <gwt.console.product.version>${gwt.console.product.version}</gwt.console.product.version>
+                                <gwt.console.version>${project.version}</gwt.console.version>
+                                <gwt.console.core.version>${project.parent.version}</gwt.console.core.version>
                                 <gwt.console.dev.host>${gwt.bindAddress}</gwt.console.dev.host>
                             </options>
                         </configuration>
