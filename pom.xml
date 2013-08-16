@@ -23,7 +23,7 @@
     <parent>
         <groupId>org.jboss.as</groupId>
         <artifactId>jboss-as-console-build</artifactId>
-        <version>1.5.5.Final</version>
+        <version>1.5.6.Final</version>
         <relativePath/>
     </parent>
 
@@ -31,7 +31,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>release-stream</artifactId>
-    <version>1.5.7-SNAPSHOT</version>
+    <version>1.5.7.Final</version>
     <packaging>war</packaging>
     <name>HAL Release Stream</name>
     <description>HAL release stream master. Implements the assembly.</description>
