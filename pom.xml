@@ -27,7 +27,6 @@
         <relativePath/>
     </parent>
 
-
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>release-stream</artifactId>
@@ -145,6 +144,36 @@
 
 
         <plugins>
+            <plugin>
+                <groupId>org.bsc.maven</groupId>
+                <artifactId>maven-processor-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>process-spi</id>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <outputDiagnostics>false</outputDiagnostics>
+                            <addCompileSourceRoots>false</addCompileSourceRoots>
+                            <appendSourceArtifacts>true</appendSourceArtifacts>
+                            <processors>
+                                <processor>org.jboss.as.console.spi.SPIProcessor</processor>
+                            </processors>
+                            <options>
+                                <!--
+                                    All properties prefixed with 'gwt' are written into the
+                                    generated GWT module (without the 'gwt.' prefix)
+                                -->
+                                <gwt.console.version>${project.version}</gwt.console.version>
+                                <gwt.console.core.version>${project.parent.version}</gwt.console.core.version>
+                                <gwt.console.dev.host>${gwt.bindAddress}</gwt.console.dev.host>
+                            </options>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
