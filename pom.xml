@@ -30,7 +30,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>release-stream</artifactId>
-    <version>2.1.0.Final</version>
+    <version>2.0.1.Final</version>
     <packaging>war</packaging>
     <name>HAL Release Stream</name>
     <description>HAL release stream master. Implements the assembly.</description>
