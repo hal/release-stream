@@ -48,6 +48,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Assembly -->
+        <assembly.id>overlay</assembly.id>
+        <classifier>resources</classifier>
         <module.slot>main</module.slot>
 
         <!-- Extensions -->
@@ -226,7 +228,7 @@
                     <excludes>
                         <exclude>WEB-INF/**</exclude>
                     </excludes>
-                    <classifier>resources</classifier>
+                    <classifier>${classifier}</classifier>
                 </configuration>
             </plugin>
             <plugin>
@@ -259,6 +261,13 @@
             <id>product</id>
             <properties>
                 <module.slot>eap</module.slot>
+            </properties>
+        </profile>
+        <profile>
+            <id>full</id>
+            <properties>
+                <assembly.id>full-overlay</assembly.id>
+                <classifier>full-resources</classifier>
             </properties>
         </profile>
     </profiles>

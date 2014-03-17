@@ -28,7 +28,7 @@
     </properties>
 
     <resources>
-        <resource-root path="${project.build.finalName}-resources.jar"/>
+        <resource-root path="${project.build.finalName}-${classifier}.jar"/>
     </resources>
 
     <dependencies>
