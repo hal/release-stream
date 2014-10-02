@@ -54,7 +54,7 @@
 
         <!-- Extensions -->
         <!-- Enable as soon as a final release for the Core Console is available -->
-        <extension.picketlink.version>2.0.1.Final</extension.picketlink.version>
+        <!-- <extension.picketlink.version>2.0.1.Final</extension.picketlink.version> -->
         <!--<extension.switchyard.version>1.0.0.Final</extension.switchyard.version>-->
         <!--<extension.teiid.version>1.1.1</extension.teiid.version>-->
     </properties>
@@ -62,6 +62,7 @@
 
     <dependencies>
         <!-- PicketLink -->
+        <!--
         <dependency>
             <groupId>org.picketlink</groupId>
             <artifactId>picketlink-console-extensions</artifactId>
@@ -75,6 +76,7 @@
             <classifier>sources</classifier>
             <scope>provided</scope>
         </dependency>
+        -->
 
         <!-- SwitchYard -->
         <!-- Enable as soon as a final release for the Core Console available -->
