@@ -19,29 +19,26 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-
     <parent>
         <groupId>org.jboss.as</groupId>
         <artifactId>jboss-as-console-build</artifactId>
-        <version>2.8.0.Alpha0</version>
+        <version>2.8.0-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.hal</groupId>
     <artifactId>release-stream</artifactId>
-    <version>2.8.0.Alpha0</version>
+    <version>2.8.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>HAL Release Stream</name>
     <description>HAL release stream master. Implements the assembly.</description>
-
 
     <scm>
         <connection>scm:git:git://https://github.com/hal/release-stream.git</connection>
         <developerConnection>scm:git:git@github.com:hat/release-stream.git</developerConnection>
         <url>https://github.com/hal/release-stream</url>
     </scm>
-
 
     <properties>
         <!-- Maven -->
@@ -55,9 +52,8 @@
         <!-- Extensions -->
         <!--<extension.picketlink.version>2.0.8.Final</extension.picketlink.version>-->
         <!--<extension.switchyard.version>1.0.0.Final</extension.switchyard.version>-->
-        <!--<extension.teiid.version>1.1.1</extension.teiid.version>-->
+        <!--<extension.teiid.version>2.5.2-SNAPSHOT</extension.teiid.version>-->
     </properties>
-
 
     <dependencies>
         <!-- PicketLink -->
@@ -112,7 +108,6 @@
         -->
     </dependencies>
 
-
     <build>
         <finalName>hal-console-${project.version}</finalName>
         <pluginManagement>
@@ -140,7 +135,6 @@
             </plugins>
         </pluginManagement>
 
-
         <plugins>
             <plugin>
                 <groupId>org.bsc.maven</groupId>
@@ -153,22 +147,22 @@
                         </goals>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <processors>
-                                <processor>org.jboss.hal.processors.GwtModuleProcessor</processor>
-                            </processors>
-                            <processSourceArtifacts>
-                                <processSourceArtifact>org.jboss.as:jboss-as-console-core</processSourceArtifact>
-                            </processSourceArtifacts>
                             <options>
                                 <!--
                                     All properties prefixed with 'gwt.' are written into the
                                     generated GWT module (without the 'gwt.' prefix)
                                 -->
-                                <gwt.console.version>${project.version}</gwt.console.version>
+                                <gwt.hal.version>${project.version}</gwt.hal.version>
                                 <gwt.console.core.version>${project.parent.version}</gwt.console.core.version>
                                 <!-- Uncomment to get more messages from the annotation processors -->
-                                <debug>true</debug>
+                                <!--<debug>true</debug>-->
                             </options>
+                            <processSourceArtifacts>
+                                <processSourceArtifact>org.jboss.as:jboss-as-console-core:sources</processSourceArtifact>
+                                <!--<processSourceArtifact>org.picketlink:picketlink-console-extensions</processSourceArtifact>-->
+                                <!--<processSourceArtifact>org.picketlink:picketlink-console-extensions</processSourceArtifact>-->
+                                <!--<processSourceArtifact>org.jboss.teiid.web-console:console-extensions:sources</processSourceArtifact>-->
+                            </processSourceArtifacts>
                             <defaultOutputDirectory>${project.build.directory}/generated-sources/annotations</defaultOutputDirectory>
                         </configuration>
                     </execution>
@@ -259,7 +253,6 @@
         </plugins>
     </build>
 
-
     <profiles>
         <profile>
             <id>product</id>
@@ -275,7 +268,6 @@
             </properties>
         </profile>
     </profiles>
-
 
     <repositories>
         <repository>
