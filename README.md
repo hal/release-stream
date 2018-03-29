@@ -1,6 +1,6 @@
-<div class="alert alert-warning">
+# &#x26a0; Maintenance Version
+
 This repository is the maintenance codebase of the HAL managament console for WildFly 12 and below. For the most recent version, please use https://github.com/hal/console
-</div>
 
 ---
 
