@@ -1,3 +1,9 @@
+# &#x26a0; Maintenance Version
+
+This repository is the maintenance codebase of the HAL managament console for WildFly 12 and below. For the most recent version, please use https://github.com/hal/console
+
+---
+
 # Release Strem
 This maven build acts as the release coordination of the HAL management console that can be used across products. An essential part of the release stream is to provide a way to build the final master console.
 
